@@ -14,6 +14,8 @@ import { NavbarComponentComponent } from './navbar-component/navbar-component.co
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { PollComponentComponent } from './poll-component/poll-component.component';
 
 
 
@@ -23,6 +25,8 @@ import { MatListModule } from '@angular/material/list';
     AppComponent,
     DashboardComponentComponent,
     NavbarComponentComponent,
+    HomeComponentComponent,
+    PollComponentComponent,
   ],
   imports: [
     BrowserModule,
