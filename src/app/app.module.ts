@@ -18,7 +18,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule} from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 const routes:Routes=[
   {path:'vote',
 component:VoteComponent
@@ -49,7 +50,7 @@ component:LoginComponent}
      MatToolbarModule, MatButtonModule,
      MatSidenavModule, MatIconModule, MatListModule, 
      MatGridListModule, MatInputModule, MatMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,FormsModule,MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
