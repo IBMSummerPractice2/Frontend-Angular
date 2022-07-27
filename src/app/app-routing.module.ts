@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponentComponent } from './home-component/home-component.component';
-import { PollComponentComponent } from './poll-component/poll-component.component';
 
+// Aceasta componenta este inutila?
 const routes: Routes = [
-  { path: 'poll', component: PollComponentComponent },
-  { path: 'home', component: HomeComponentComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path:'**', redirectTo:"/home"}
+
+  
 ];
 
 @NgModule({
