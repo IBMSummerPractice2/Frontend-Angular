@@ -20,13 +20,27 @@ import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule} from '@angular/forms';
 
 const routes:Routes=[
-  {path:'vote',
-component:VoteComponent
-},
-{path:'dashboard',
-component:DashboardComponent},
-{path:'',
-component:LoginComponent}
+  {
+    path: 'vote',
+    component: VoteComponent
+  },
+  {
+    path: 'dashboard',
+    component:DashboardComponent},
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: "/login"
+  }
+
 
 ];
 
