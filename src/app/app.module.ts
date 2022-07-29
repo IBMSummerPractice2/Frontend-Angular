@@ -14,35 +14,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { VoteComponent } from './vote/vote.component';
 import {MatRadioModule} from '@angular/material/radio';
-import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule} from '@angular/forms';
-
-const routes:Routes=[
-  {
-    path: 'vote',
-    component: VoteComponent
-  },
-  {
-    path: 'dashboard',
-    component:DashboardComponent},
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: "/login"
-  }
+import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
-];
 
 @NgModule({
   declarations: [
@@ -54,15 +33,17 @@ const routes:Routes=[
   ],
  
   imports: [
-     BrowserModule,
-     RouterModule.forRoot(routes),
+    HttpClientModule,
+    CommonModule,
+    AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MatRadioModule,
     MatCardModule, 
     LayoutModule,
-     MatToolbarModule, MatButtonModule,
-     MatSidenavModule, MatIconModule, MatListModule, 
-     MatGridListModule, MatInputModule, MatMenuModule,
+    MatToolbarModule, MatButtonModule,
+    MatSidenavModule, MatIconModule, MatListModule, 
+    MatGridListModule, MatInputModule, MatMenuModule,
     ReactiveFormsModule
   ],
   providers: [],

@@ -8,16 +8,22 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class LoginComponent implements OnInit {
    loginForm!: FormGroup;
-  constructor() { }
+  constructor(
+
+  ) { }
   ngOnInit()  {
     this.loginForm= new FormGroup(
     {
-      email: new FormControl('',[Validators.required,Validators.email]),
-      password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+      userId: new FormControl('',[Validators.required,Validators.email]),
+     
     }
 
     
-    );}
-  onLogin(){}
+    );
+  }
+  onLogin() {
+    
+  }
  
+
   }
