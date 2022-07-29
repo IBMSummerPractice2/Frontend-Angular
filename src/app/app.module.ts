@@ -23,14 +23,26 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 const routes:Routes=[
-  {path:'vote',
-component:VoteComponent
-},
-{path:'dashboard',
-component:DashboardComponent},
-{path:'',
-component:LoginComponent}
-
+  {
+    path: 'vote',
+    component: VoteComponent
+  },
+  {
+    path: 'dashboard',
+    component:DashboardComponent},
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: "/login"
+  }
 ];
 
 @NgModule({
