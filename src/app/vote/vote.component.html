@@ -1,4 +1,21 @@
-<mat-radio-group aria-label="Select an option">
-  <mat-radio-button value="1">Option 1</mat-radio-button>
-  <mat-radio-button value="2">Option 2</mat-radio-button>
+<label id="example-radio-group-label">   Give a note</label>
+<mat-radio-group 
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let note of note" [value]="note">
+    {{note}}
+  </mat-radio-button>
 </mat-radio-group>
+<p>
+  <mat-form-field appearance="legacy">
+    <mat-label>Comment</mat-label>
+    <input matInput placeholder="Comment" name="pName" ngModel>
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+</p>
+  <div class="example-button-row">
+    <button mat-button>  Submit</button>
+  </div>
+
+
