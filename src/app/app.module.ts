@@ -20,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
 const routes:Routes=[
   {path:'vote',
 component:VoteComponent
@@ -37,7 +39,8 @@ component:LoginComponent}
     DashboardComponent,
     VoteComponent,
     LoginComponent,
-
+    UserComponent,
+    
   ],
  
   imports: [
@@ -50,10 +53,13 @@ component:LoginComponent}
      MatToolbarModule, MatButtonModule,
      MatSidenavModule, MatIconModule, MatListModule, 
      MatGridListModule, MatInputModule, MatMenuModule,
-    ReactiveFormsModule,FormsModule,MatFormFieldModule
+    ReactiveFormsModule,FormsModule,MatFormFieldModule,HttpClientModule,
+
   ],
+  exports :[VoteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
