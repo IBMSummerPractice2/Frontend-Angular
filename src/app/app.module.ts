@@ -21,7 +21,11 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+/*<<<<<<< Updated upstream*/
+import {MatDialogModule} from '@angular/material/dialog';
 import { UserComponent } from './user/user.component';
+import { DialogComponent } from './dialog/dialog.component';
+
 const routes:Routes=[
   {
     path: 'vote',
@@ -43,6 +47,7 @@ const routes:Routes=[
     path: '**',
     redirectTo: "/login"
   }
+
 ];
 
 @NgModule({
@@ -51,12 +56,23 @@ const routes:Routes=[
     DashboardComponent,
     VoteComponent,
     LoginComponent,
+/*<<<<<<< Updated upstream
     UserComponent,
     
   ],
  
   imports: [
      BrowserModule,
+=======*/
+DialogComponent,
+
+  ],
+ 
+  imports: [
+    HttpClientModule,
+    /*CommonModule,
+    AppRoutingModule,*/
+    BrowserModule,
      RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatRadioModule,
@@ -65,7 +81,7 @@ const routes:Routes=[
      MatToolbarModule, MatButtonModule,
      MatSidenavModule, MatIconModule, MatListModule, 
      MatGridListModule, MatInputModule, MatMenuModule,
-    ReactiveFormsModule,FormsModule,MatFormFieldModule,HttpClientModule,
+    ReactiveFormsModule,FormsModule,MatFormFieldModule,HttpClientModule,MatDialogModule
 
   ],
   exports :[VoteComponent],
