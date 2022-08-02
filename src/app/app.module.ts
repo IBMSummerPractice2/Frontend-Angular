@@ -14,14 +14,49 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { VoteComponent } from './vote/vote.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule} from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+/*<<<<<<< Updated upstream*/
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserComponent } from './user/user.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { TalComponent } from './tal/tal.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import{MatNativeDateModule} from '@angular/material/core'
+const routes:Routes=[
+  {
+    path: 'vote',
+    component: VoteComponent
+  },
+  {
+    path: 'dashboard',
+    component:DashboardComponent},
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'l',
+    component: TalComponent
+  },
 
 
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: "/login"
+  }
+
+];
 
 @NgModule({
   declarations: [
@@ -29,25 +64,41 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     VoteComponent,
     LoginComponent,
+/*<<<<<<< Updated upstream
+    UserComponent,
+    
+  ],
+ 
+  imports: [
+     BrowserModule,
+=======*/
+DialogComponent,
+TalComponent,
 
   ],
  
   imports: [
     HttpClientModule,
-    CommonModule,
-    AppRoutingModule,
+    /*CommonModule,
+    AppRoutingModule,*/
     BrowserModule,
+     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatRadioModule,
     MatCardModule, 
     LayoutModule,
-    MatToolbarModule, MatButtonModule,
-    MatSidenavModule, MatIconModule, MatListModule, 
-    MatGridListModule, MatInputModule, MatMenuModule,
-    ReactiveFormsModule
+     MatToolbarModule, MatButtonModule,
+     MatSidenavModule, MatIconModule, MatListModule, 
+     MatGridListModule, MatInputModule, MatMenuModule,
+    ReactiveFormsModule,FormsModule,MatFormFieldModule,
+    HttpClientModule,MatNativeDateModule,
+    MatDialogModule,
+MatDatepickerModule
   ],
+  exports :[VoteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 

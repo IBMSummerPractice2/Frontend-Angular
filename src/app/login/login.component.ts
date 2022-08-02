@@ -8,22 +8,31 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class LoginComponent implements OnInit {
    loginForm!: FormGroup;
-  constructor(
-
-  ) { }
+  constructor() { }
   ngOnInit()  {
     this.loginForm= new FormGroup(
     {
-      userId: new FormControl('',[Validators.required,Validators.email]),
-     
+/*<<<<<<< Updated upstream
+      email: new FormControl('',[Validators.required,Validators.email]),
+      password: new FormControl('',[Validators.required,Validators.minLength(6)]),
     }
 
     
+    );}
+  onLogin(){}
+ 
+=======*/
+      userId: new FormControl('',[Validators.required,Validators.email]),
+
+    }
+
+
     );
   }
   onLogin() {
-    
-  }
- 
 
+  }
+
+
+/*>>>>>>> Stashed changes*/
   }

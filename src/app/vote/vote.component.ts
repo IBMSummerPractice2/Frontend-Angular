@@ -7,10 +7,12 @@ import {MatRadioModule} from '@angular/material/radio';
   styleUrls: ['./vote.component.css']
 })
 export class VoteComponent implements OnInit {
-
+  favoriteSeason:any;
+  note: string[] = ['1', '2', '3', '4','5','6','7','8','9','10'];
   constructor() { }
-
+  panelOpenState = false;
   ngOnInit() {
   }
+    
 
 }

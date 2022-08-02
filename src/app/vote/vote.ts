@@ -1,4 +1,7 @@
 export interface Vote {
+//<<<<<<< Updated upstream
+//=======
     value:any;
-    hintLabel: string;
+    hintlabel:string;
+//>>>>>>> Stashed changes
 }

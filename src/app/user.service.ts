@@ -4,10 +4,9 @@ import { Observable } from 'rxjs/internal/Observable';
 @Injectable({
   providedIn: 'root'
 })
-export class VoteeService {
-
+export class UserService {
   constructor(private http: HttpClientModule) { }
   getUser(){
  //this.http.get("");
-  }}
-  
+}
+}
