@@ -25,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserComponent } from './user/user.component';
 import { DialogComponent } from './dialog/dialog.component';
-
+import { TalComponent } from './tal/tal.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import{MatNativeDateModule} from '@angular/material/core'
 const routes:Routes=[
   {
     path: 'vote',
@@ -38,6 +40,12 @@ const routes:Routes=[
     path: 'login',
     component: LoginComponent
   },
+  {
+    path: 'l',
+    component: TalComponent
+  },
+
+
   {
     path: '',
     redirectTo: '/login',
@@ -65,6 +73,7 @@ const routes:Routes=[
      BrowserModule,
 =======*/
 DialogComponent,
+TalComponent,
 
   ],
  
@@ -81,8 +90,10 @@ DialogComponent,
      MatToolbarModule, MatButtonModule,
      MatSidenavModule, MatIconModule, MatListModule, 
      MatGridListModule, MatInputModule, MatMenuModule,
-    ReactiveFormsModule,FormsModule,MatFormFieldModule,HttpClientModule,MatDialogModule
-
+    ReactiveFormsModule,FormsModule,MatFormFieldModule,
+    HttpClientModule,MatNativeDateModule,
+    MatDialogModule,
+MatDatepickerModule
   ],
   exports :[VoteComponent],
   providers: [],
