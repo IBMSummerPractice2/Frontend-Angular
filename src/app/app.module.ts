@@ -23,11 +23,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 /*<<<<<<< Updated upstream*/
 import {MatDialogModule} from '@angular/material/dialog';
-import { UserComponent } from './user/user.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { TalComponent } from './tal/tal.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import{MatNativeDateModule} from '@angular/material/core'
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+
 const routes:Routes=[
   {
     path: 'vote',
@@ -35,7 +38,7 @@ const routes:Routes=[
   },
   {
     path: 'dashboard',
-    component:DashboardComponent},
+    component:TalComponent},
   {
     path: 'login',
     component: LoginComponent
@@ -91,14 +94,16 @@ TalComponent,
      MatSidenavModule, MatIconModule, MatListModule, 
      MatGridListModule, MatInputModule, MatMenuModule,
     ReactiveFormsModule,FormsModule,MatFormFieldModule,
-    HttpClientModule,MatNativeDateModule,
-    MatDialogModule,
+    HttpClientModule,MatNativeDateModule,MatTableModule,
+    MatDialogModule,MatPaginatorModule,MatSortModule,
 MatDatepickerModule
   ],
   exports :[VoteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
 
 

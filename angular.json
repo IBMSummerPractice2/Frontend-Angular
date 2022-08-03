@@ -68,7 +68,8 @@
               "browserTarget": "angular-dashboard-happiness:build:production"
             },
             "development": {
-              "browserTarget": "angular-dashboard-happiness:build:development"
+              "browserTarget": "angular-dashboard-happiness:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
