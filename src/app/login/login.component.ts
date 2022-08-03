@@ -1,38 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators} from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { ApiService } from '../service/api.service';
+import { of, tap, map, catchError, EMPTY } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-   loginForm!: FormGroup;
-  constructor() { }
-  ngOnInit()  {
-    this.loginForm= new FormGroup(
-    {
-/*<<<<<<< Updated upstream
-      email: new FormControl('',[Validators.required,Validators.email]),
-      password: new FormControl('',[Validators.required,Validators.minLength(6)]),
-    }
-
-    
-    );}
-  onLogin(){}
- 
-=======*/
-      userId: new FormControl('',[Validators.required,Validators.email]),
-
-    }
-
-
-    );
-  }
-  onLogin() {
-
+  @HostListener('document:keydown.enter', ['$event'])
+  pressEnter() {
+    this.login();
   }
 
-
-/*>>>>>>> Stashed changes*/
+  id: any;
+  constructor(private router: Router, private api: ApiService) {}
+  ngOnInit() {
   }
+  
+  login() {
+      this.api.getUser(this.id)
+        .pipe(
+          tap(user => {
+            console.log(user);
+            this.router.navigate(['./dashboard', user.id]);
+          }),
+          catchError((err, caught) => {
+            alert("User not found!");
+            return EMPTY;
+          })
+        )
+        .subscribe();
+  }
+}

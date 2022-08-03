@@ -17,7 +17,8 @@ productForm!: FormGroup;//constructor pentru reacttive form
     
   }
 addquestion(){//functia de adaugare a intrebarii
-  if(this.productForm.valid){
+  if (this.productForm.valid) {
+    console.log(this.productForm.value);
     this.api.postProduct(this.productForm.value)//apeleaza api.service
     .subscribe({
       next:(res) =>{

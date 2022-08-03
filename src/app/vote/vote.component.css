@@ -12,10 +12,20 @@
 .example-button-row a {
   margin-right: 12px;
 }
-:host {
+
+.votes {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.vote-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  display: grid;
   align-items: center;
-  margin-right: 10px;
-  
+  justify-items: center;
 }

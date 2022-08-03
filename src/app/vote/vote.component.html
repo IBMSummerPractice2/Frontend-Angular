@@ -1,23 +1,25 @@
 
-<label id="example-radio-group-label">matches</label>
-<mat-radio-group 
-  aria-labelledby="example-radio-group-label"
-  class="example-radio-group"
-  [(ngModel)]="favoriteSeason">
-  <mat-radio-button class="example-radio-button" *ngFor="let note of note" [value]="note">
-    {{note}}
-  </mat-radio-button>
-</mat-radio-group>
-<p>
-  <mat-form-field appearance="legacy">
-    <mat-label>Comment</mat-label>
-    <input matInput placeholder="Comment" name="pName" ngModel>
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-  </mat-form-field>
-</p>
-<div >
-  <button  style mat-raised-button color="warn" routerLink="/dashboard">Close</button>
-  <button  style ="margin: left 8px;" mat-raised-button color="orange" routerLink="/dashboard"  >Save</button>
+<div class="vote-container">
+  <h1 id="example-radio-group-label">{{question}}</h1>
+  <mat-radio-group 
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group votes"
+    [(ngModel)]="vote">
+    <mat-radio-button class="example-radio-button" *ngFor="let note of notes" [value]="note">
+      {{note}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Comment</mat-label>
+      <input matInput placeholder="Comment" name="pName" [(ngModel)]="comment">
+    </mat-form-field>
+  </p>
+  <div [style]="'display: flex; column-gap: 10px'">
+    
+    <button  style ="margin: left 8px;" mat-raised-button color="primary"  (click)="saveVote()">Save</button>
+    <button  style mat-raised-button color="warn" (click)="back()">Close</button>
+  </div>
 </div>
 
 

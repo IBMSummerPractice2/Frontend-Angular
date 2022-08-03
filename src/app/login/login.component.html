@@ -3,19 +3,14 @@
       <div class="header" >
       <h2>LOGIN</h2>
       </div>
-      <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
   <div class="id-input">
       <mat-form-field class="full-width" appearance="outline">
           <mat-label>Id</mat-label>
-          <input formControlName="id" matInput required />
-          <!--
-             <mat-error *ngIf="loginForm.get('email')?.errors">
-          </mat-error>-->
+          <input matInput [(ngModel)]="id">
       </mat-form-field>
   </div>
      
-  <button mat-flat-button color="primary" routerLink="/dashboard">Login</button>
+  <button mat-flat-button color="primary" (click)="login()">Login</button>
 
-</form>
   </mat-card-content>
 </mat-card>

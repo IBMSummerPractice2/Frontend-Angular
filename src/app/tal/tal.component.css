@@ -15,3 +15,73 @@
   max-width: 1200px;
   margin:0 auto;
 }
+
+.dashboard {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.dashboard__body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+
+  grid-auto-rows: 200px;
+
+}
+
+.dashboard__body__card {
+  display: grid;
+  padding: 1rem;
+  border-radius: 20px;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2rem auto 1rem 1rem;
+}
+
+.dashboard__body__card .title {
+  grid-row: 1  / span 1;
+  grid-column: 1 / span 3;
+  font-size: 1.3rem;
+
+}
+
+.dashboard__body__card .question {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 3;
+  font-size: 1rem;
+
+}
+
+.dashboard__body__card .date {
+  grid-column: 3 / span 1;
+  grid-row: 4 / span 1;
+  justify-self: end;
+  align-self: center;
+  font-size: 0.8rem
+}
+
+.dashboard__body__card button {
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  width: fit-content;
+  background: rgb(50,215,55);
+  background: radial-gradient(circle, rgba(50,215,55,0.8802871490393032) 20%, rgba(34,141,1,0.8438725832129726) 100%);
+}
+
+
+.dashboard__body__card button:active {
+  background: rgb(50,215,55);
+  background: radial-gradient(circle, rgba(40, 162, 44, 0.88) 20%, rgba(21, 90, 0, 0.844) 100%);
+}

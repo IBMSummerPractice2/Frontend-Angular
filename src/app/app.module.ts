@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -33,22 +32,16 @@ import { MatTableModule } from '@angular/material/table';
 
 const routes:Routes=[
   {
-    path: 'vote',
-    component: VoteComponent
+    path: 'vote/:id/:pid',
+    component: VoteComponent,
   },
   {
-    path: 'dashboard',
+    path: 'dashboard/:id',
     component:TalComponent},
   {
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'l',
-    component: TalComponent
-  },
-
-
   {
     path: '',
     redirectTo: '/login',
@@ -58,34 +51,20 @@ const routes:Routes=[
     path: '**',
     redirectTo: "/login"
   }
-
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     VoteComponent,
-    LoginComponent,
-/*<<<<<<< Updated upstream
-    UserComponent,
-    
+    LoginComponent, 
+    DialogComponent,
+    TalComponent,
   ],
- 
-  imports: [
-     BrowserModule,
-=======*/
-DialogComponent,
-TalComponent,
-
-  ],
- 
   imports: [
     HttpClientModule,
-    /*CommonModule,
-    AppRoutingModule,*/
     BrowserModule,
-     RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatRadioModule,
     MatCardModule, 
