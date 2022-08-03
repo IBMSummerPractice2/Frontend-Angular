@@ -8,12 +8,15 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
    postProduct(data:string){
-    return this.http.post<string>("https://localhost:8080/poll",data);
+    return this.http.post<string>("http://localhost:8080/poll",data);
     }
-    //getProduct(data :any){
-    //  return this.http.get<any>("http://localhost:3000/productList/",data);
+    getProduct(){
+      return this.http.get<string>("http://localhost:8080/poll");
     }
- // }
+    //deleteProduct(id:number){
+
+    //}
+  }
 //function data<T>(arg0: string, data: any): ApiService {
   //throw new Error('Function not implemented.');
 //}
