@@ -8,6 +8,7 @@ import { Location } from '@angular/common';
   templateUrl: './vote.component.html',
   styleUrls: ['./vote.component.css'],
 })
+  
 export class VoteComponent implements OnInit {
   vote: any;
   question: string = ''
