@@ -15,18 +15,19 @@ import { Title } from '@angular/platform-browser';
 })
   
 export class DialogComponent implements OnInit {
-  poll :Poll  | undefined
- 
   // title: string = ''
   // question: string = ''
   // userid: number = -1;
+
+
   productForm!: FormGroup;
-  constructor(private router: Router, private route: ActivatedRoute, private location: Location,private Dialogref:MatDialogRef<DialogComponent>,private api:ApiService,private formBuilder:FormBuilder,
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location,private Dialogref:MatDialogRef<DialogComponent>,private api:ApiService,private formBuilder:FormBuilder
   ) { }
   
   
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({ "title": ['', String] , "question" : ['', String]})
+    
   }
 
 
@@ -34,6 +35,7 @@ export class DialogComponent implements OnInit {
 
     console.log(this.productForm.value);
     
+
     this.api
         .postProduct(this.productForm.value) 
         .subscribe({

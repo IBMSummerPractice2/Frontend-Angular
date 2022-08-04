@@ -3,4 +3,5 @@ export interface Poll {
     title: string,
     question: string,
     date: Date,
+    
 }

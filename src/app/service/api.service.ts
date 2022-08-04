@@ -9,8 +9,8 @@ import { User } from '../models/user.mode';
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
-  postProduct(data: string) {
-    return this.http.post<string>('http://localhost:8080/poll', data);
+  postProduct(data: Poll) {
+    return this.http.post<Poll>('http://localhost:8080/poll', data);
   }
   getProduct(): Observable<Poll[]> {
     return this.http.get<Poll[]>('http://localhost:8080/poll/all');
